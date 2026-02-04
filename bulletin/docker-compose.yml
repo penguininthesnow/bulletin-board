@@ -1,7 +1,0 @@
-services:
-  message-board:
-    build: ./backend
-    ports: 
-      - "3001:3000"  # 容器內: FastAPI跑 3000 ; EC2對外:開 3001
-    env_file:
-      - .env
