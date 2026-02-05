@@ -1,12 +1,25 @@
-from fastapi import FastAPI, UploadFile, Form
+from fastapi import FastAPI, UploadFile, Form, File
+from fastapi.middleware.cors import CORSMiddleware
 from database import get_connection
 from s3 import upload_image
 
 app = FastAPI()
 
 
+# 讓前端fetch 不會被擋
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# # 暫存留言 RDS
+# messages = []
+
+
 @app.post("/api/messages")
-async def create_message(content: str = Form(...), image: UploadFile = Form(...)):
+async def create_message(content: str = Form(...), image: UploadFile = File(...)):
     image_url = upload_image(image)
 
     conn = get_connection()
