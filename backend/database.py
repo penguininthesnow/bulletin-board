@@ -1,4 +1,5 @@
 import os
+import mysql.connector
 import pymysql
 from dotenv import load_dotenv
 
@@ -22,4 +23,5 @@ def get_connection():
         database=DB_NAME,
         cursorclass=pymysql.cursors.DictCursor,
         autocommit=True,
+        port=3306,
     )
