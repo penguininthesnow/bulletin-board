@@ -1,8 +1,8 @@
 services:
   message-board:
     build: 
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: backend/Dockerfile
     ports: 
       - "3001:3000"  # 容器內: FastAPI跑 3000 ; EC2對外:開 3001
     env_file:
