@@ -1,9 +1,16 @@
 services:
   message-board:
     build: 
+<<<<<<< Updated upstream
       context: ./backend
       dockerfile: Dockerfile
     ports: 
       - "3001:3000"  # 容器內: FastAPI跑 3000 ; EC2對外:開 3001
+=======
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "3001:3000" # 容器內: FastAPI跑 3000 ; EC2對外:開 3001
+>>>>>>> Stashed changes
     env_file:
       - .env
