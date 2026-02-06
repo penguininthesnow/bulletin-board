@@ -21,9 +21,10 @@ async function loadMessages() {
     messagesDiv.innerHTML = "";
     data.forEach(m => {
         messagesDiv.innerHTML +=`
-        <div>
+        <div class="messages">
             <p>${m.content}</p>
             <img src="${m.image_url}" width="200" />
+            ${index !== data.length - 1 ? "<hr />" : ""}
         </div>`;
     });
 }
