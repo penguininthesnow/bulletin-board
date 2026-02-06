@@ -3,6 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from database import get_connection
 from s3 import upload_image
 
+from fastapi.staticfiles import StaticFiles
+
 app = FastAPI()
 
 
@@ -39,3 +41,7 @@ def get_messages():
     cursor = conn.cursor(dictionary=True)
     cursor.execute("SELECT * FROM messages ORDER BY created_at DESC")
     return cursor.fetchall()
+
+
+# 靜態網頁
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
