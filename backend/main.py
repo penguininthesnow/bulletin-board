@@ -44,4 +44,4 @@ def get_messages():
 
 
 # 靜態網頁
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+app.mount("/", StaticFiles(directory="../frontend", html=True), name="frontend")
