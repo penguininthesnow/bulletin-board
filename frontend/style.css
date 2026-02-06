@@ -1,0 +1,33 @@
+.message {
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.content {
+  flex: 0 0 200px;
+  height: 40px;
+  line-height: 40px; /* 與高度相同 */
+  width: 20px;
+  padding: 5px;;
+  box-sizing: border-box;
+}
+
+.word {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.word p {
+  margin: 0;
+  margin-right: 10px;
+  width: 80px;
+}
+
+.file {
+  margin-bottom: 10px;
+}

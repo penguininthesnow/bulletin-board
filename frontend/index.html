@@ -10,9 +10,16 @@
     <h1>圖文留言板</h1>
 
     <form id="form">
-      <textarea name="content" required></textarea>
-      <input type="file" name="image" required />
-      <button type="submit">送出</button>
+      <div class="word">
+        <p>文字內容</p>
+        <textarea name="content" class="content" required></textarea>
+      </div>
+      <div class="file">
+        圖片檔案<input type="file" name="image" required />
+      </div>
+      <div>
+        <button type="submit">送出</button>
+      </div>
     </form>
 
     <div id="messages"></div>
