@@ -1,37 +1,5 @@
-// const form = document.getElementById("form");
-// const messagesDiv = document.getElementById("messages");
-
-// form.addEventListener("submit", async e => {
-//     e.preventDefault();
-//     const formData = new FormData(form);
-
-//     await fetch("/api/messages", {
-//         method: "POST",
-//         body: formData
-//     });
-
-//     form.reset();
-//     loadMessages();
-// });
-
-// async function loadMessages() {
-//     const res = await fetch("/api/messages");
-//     const data = await res.json();
-
-//     messagesDiv.innerHTML = "";
-//     data.forEach(m => {
-//         messagesDiv.innerHTML +=`
-//         <div class="message">
-//             <p>${m.content}</p>
-//             <img src="${m.image_url}" width="200" />
-//             <hr />
-//         </div>`;
-//     });
-// }
-
-
-
-// loadMessages();
+const form = document.getElementById("form");
+const messagesDiv = document.getElementById("messages");
 
 const API_BASE = "/api";
 
@@ -53,8 +21,8 @@ form.addEventListener("submit", async e => {
     loadMessages();
 });
 
-async function loadMessages() {
-    const res = await fetch(API_URL);
+async function loadMessages() { 
+    const res = await fetch( `${API_BASE}/messages`);
     const data = await res.json();
 
     messagesDiv.innerHTML = "";
@@ -64,16 +32,12 @@ async function loadMessages() {
             messagesDiv.innerHTML += "<hr />";
         }
         messagesDiv.innerHTML +=`
-        <div>
-            <p>${m.content}</p>
-            <img src="${m.image_url}" width="200" />
-        </div>`;
+            <div class="message">
+                <p>${m.content}</p>
+                <img src="${m.image_url}" width="200" />
+            </div>
+        `;
     });
 }
 
 loadMessages();
-
-// CORS
-app.use(cors({
-    origin: "https://bullletinboardthirdproject.s3-website-us-east-1.amazonaws.com"
-}));
