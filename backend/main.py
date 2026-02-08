@@ -27,6 +27,7 @@ app.add_middleware(
 # POST 資料上傳
 @app.post("/api/messages")
 async def create_message(content: str = Form(...), image: UploadFile = File(...)):
+    print("POST /api/messages hit")
     image_url = upload_image(image)
 
     conn = get_connection()
