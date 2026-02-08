@@ -1,7 +1,7 @@
 const form = document.getElementById("form");
 const messagesDiv = document.getElementById("messages");
 
-const API_BASE = "/api";
+const API_BASE = "https://api.penguinthesnow.com";
 
 form.addEventListener("submit", async e => {
     e.preventDefault();
