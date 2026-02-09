@@ -13,6 +13,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://www.penguinthesnow.com",
+        "https://d1alcb35jz82s5.cloudfront.net",
         # "https://penguinthesnow.com",
     ],
     allow_credentials=True,
