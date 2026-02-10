@@ -2,9 +2,6 @@ const form = document.getElementById("form");
 const messagesDiv = document.getElementById("messages");
 
 const API_BASE = "/api";
-// "http://18.234.62.161:3001/api/messages";
-// "http://127.0.0.1:3000/api";
-// "https://api.penguinthesnow.com/api";
 
 // POST
 form.addEventListener("submit", async e => {
@@ -48,3 +45,8 @@ async function loadMessages() {
 loadMessages();
 
 console.log("NEW VERSION 2026-02-08");
+
+
+// "http://18.234.62.161:3001/api/messages";
+// "http://127.0.0.1:3000/api";
+// "https://api.penguinthesnow.com/api";
