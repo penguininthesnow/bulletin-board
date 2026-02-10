@@ -11,7 +11,12 @@ app = FastAPI()
 # 讓前端fetch 不會被擋
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "https://www.penguinthesnow.com",
+        "https://d1alcb35jz82s5.cloudfront.net",
+        # "https://penguinthesnow.com",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -23,6 +28,7 @@ app.add_middleware(
 # POST 資料上傳
 @app.post("/api/messages")
 async def create_message(content: str = Form(...), image: UploadFile = File(...)):
+    print("POST /api/messages hit")
     image_url = upload_image(image)
 
     conn = get_connection()

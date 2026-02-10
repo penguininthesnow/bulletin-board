@@ -4,3 +4,4 @@ python-multipart
 boto3
 pymysql
 python-dotenv
+mysql-connector-python
