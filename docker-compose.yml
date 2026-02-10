@@ -1,5 +1,6 @@
+version: '3'
 services:
-  message-board:
+  backend:
     build: 
       context: .
       dockerfile: backend/Dockerfile
@@ -7,3 +8,14 @@ services:
       - "3001:3000"  # 容器內: FastAPI跑 3000 ; EC2對外:開 3001
     env_file:
       - .env
+
+  # 前端用 Nginx serve build 資料夾
+  frontend:
+    image: nginx:alpine
+    # context: ./frontend
+    # dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
